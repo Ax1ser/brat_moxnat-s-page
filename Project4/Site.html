@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title> brat_moxnat's page </title>
+
+    <style>
+
+    @font-face {
+        font-family: Montserrat; /* Гарнитура шрифта */
+        src: url(fonts/pompadur.ttf); /* Путь к файлу со шрифтом */
+    }
+
+        .container {
+            display: grid;
+            height: 500vh;
+            grid-template-areas: 
+                        'header'
+                        'about'
+                        'work'
+                        'aims'
+                        'contacts';
+            grid-template-columns: 1fr;
+            grid-template-rows: 80px 1fr 1fr 1fr 100px;
+
+        }
+        .item {
+            padding: 10px;
+            border: 1px solid black;
+         }
+         .header {
+            grid-area: header;
+            display: grid;
+            width: 1fr;
+            grid-template-areas: 'name navbar';
+            grid-template-columns: 1fr;
+            background: black;
+            color: white;
+            font-family: '';
+            font-size: 15px;
+            
+            
+         }
+
+         .navbar {
+            grid-area: navbar; 
+	        justify-self: end; 
+            align-self: center;
+
+        }
+
+        .navbar a {
+	        float: right;
+	        display: block;
+	        color: white;
+            padding: 5px 15px;
+	        text-align: center;
+	        text-decoration: none;
+	        font-size: 15px;
+        }
+        
+        .name {
+            grid-area: name; 
+            justify-self: start;
+            align-self: center;
+            padding: 5px 15px;
+            font-family: ;
+        }
+
+         .about {
+            grid-area: about;
+            background: black;
+            color: white;
+            
+         }
+         .work {
+            grid-area: work;
+            background: white;
+         }
+         .aims {
+            grid-area: aims;
+            background: black;
+            color: white;
+            
+         }
+         .contacts {
+            grid-area: contacts;
+            background: white;
+           
+         }
+         
+        
+    </style>
+</head>
+
+<body>
+
+<div class = "container"> 
+   <div class="item header">
+    <div class = "name">
+        brat_moxnat 
+    </div> 
+    <div class = "navbar">
+        <a href = "#aboutme">Обо мне</a>
+        <a href = "#work">Деятельность</a>
+        <a href = "#aims">Цели</a>
+        <a href = "#contacts">Contact me</a>
+    </div>
+
+   </div>
+   <div class="item aboutme">Обо мне</div>
+   <div class="item work">Деятельность</div>
+   <div class="item aims">Цели</div>
+   <div class="item contacts">Контакты</div>
+</div>
+
+</body>
+
+
+
+</html>
