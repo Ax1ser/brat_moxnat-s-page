@@ -1,0 +1,994 @@
+<html>
+<head>
+    <title> brat_moxnat's page </title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <style>
+
+        body {
+            scroll-behavior: smooth;
+        }
+
+        *{margin: 0; padding: 0;}
+        
+        /*body {
+            z-index: 0;
+            background: black;
+            padding-top: 100px;
+        } */
+
+        .container {
+            display: grid;
+            height: auto;
+            grid-template-areas: 
+                        'header'
+                        'legend'
+                        'aboutme'
+                        'work'
+                        'projects'
+                        'contacts';
+            grid-template-columns: auto-fit;
+            grid-auto-rows: 80px 90vh 160vh 180vh 190vh 55vh;
+
+        }
+        .item {
+            padding: 10px;
+            
+         }
+         .header {
+            grid-area: header;
+            display: grid;
+            width: 100%;
+            height: 80px;
+            grid-template-areas: 'name navbar';
+            grid-template-columns: minmax(80px,auto) minmax(80px,auto);
+            background: black;
+            color: white;
+            position: fixed;
+            padding-top: 0%;
+            
+            
+         }
+
+         .navbar {
+            grid-area: navbar; 
+	        justify-self: end; 
+            align-self: center;
+            padding-right: 4%;
+
+        }
+
+        .navbar a {
+	        float: left;
+	        display: block;
+	        color: white;
+            padding: 30px 30px;
+	        text-align: center;
+	        text-decoration: none;
+	        font-family: "Montserrat";
+            font-weight: normal;
+            font-size: 15px;
+            letter-spacing: 0.15em;
+            line-height: 2em;
+        }
+
+        .up {
+            position: fixed;
+            top: 93%;
+            left: 93%;
+        }
+
+        .up a{
+            color: darkmagenta;
+            text-decoration: none;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 20px;
+            
+        }
+        
+        .name {
+            grid-area: name; 
+            justify-self: start;
+            align-self: center;
+            padding: 30px 30px;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 15px;
+            letter-spacing: 0.15em;
+            line-height: 2em;
+        }
+
+        .name a{
+            color: white;
+            text-decoration: none;
+        }
+
+        .legend {
+            grid-area: legend;
+            display: grid;
+            grid-template-areas: 'text1 image';
+            grid-template-columns: 1 fr 1 fr;
+            grid-template-rows: 1 fr;
+            grid-auto-columns: minmax(100px, 700px);
+            align-content: center;
+            justify-content: center;
+            background: black;
+            color: white;
+        }
+
+        .text1 {
+            grid-area: text1;
+            display: grid;
+            grid-template-areas: 'title'
+                                 'addtext'
+                                 'contactme';
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 0.4fr 0.4fr;
+            align-content: center;
+            padding-left: 20%;
+            padding-top: 10%;
+            justify-content: center;
+            background: black;
+            color: white;
+        }
+
+        .title {
+            grid-area: title;
+            font-family: "Roboto";
+            font-weight: bold;
+            font-size: 65px;
+            letter-spacing: 0.06em;
+            line-height: 1.1em;
+        }
+
+        .addtext {
+            grid-area: addtext;
+            font-family: "Montserrat";
+            font-weight: 200;
+            font-size: 15px;
+            letter-spacing: 0.15em;
+            line-height: 2em;
+        }
+
+        .image {
+            grid-area: image;
+            padding-right: 25%;
+            align-self: center;
+            justify-self: right;
+        }
+
+
+        .contactme {
+            grid-area: contactme;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+        }
+
+        .contactme a{
+            color: purple;
+            text-decoration: none;
+        }
+        
+         .aboutme {
+            grid-area: aboutme;
+            display: grid;
+            height: auto;
+            grid-template-areas: 'title2 title2'
+                                 'base base'
+                                 'skills skills'
+                                 'hobbies hobbies'
+                                 'quote quote';
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 150px 100px 100px 100px 200px;
+            align-content: start;
+            justify-content: center;
+            background: white;
+            color: black;
+            
+         }
+
+         .title2 {
+            grid-area: title2;
+            align-self: center;
+            justify-self: center;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 40px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+         }
+         
+         .base {
+            grid-area: base;
+            justify-self: start;
+            align-self: start;
+            padding-left: 10%;
+            font-family: "Montserrat";
+            font-weight: normal;
+            font-size: 15px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+         }
+
+         .intro {
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+         }
+
+         .skills {
+            grid-area: skills;
+            justify-self: end;
+            align-self: center;
+            padding-right: 10%;
+            padding-top: 18%;
+            font-family: "Montserrat";
+            font-weight: normal;
+            font-size: 15px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+         }
+
+         .skills_title {
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+         }
+
+         .hobbies {
+            grid-area: hobbies;
+            justify-self: start;
+            align-self: start;
+            padding-left: 10%;
+            padding-top: 14%;
+            font-family: "Montserrat";
+            font-weight: normal;
+            font-size: 15px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+         }
+
+         .hobbies_title {
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+         }
+
+         .quote {
+            grid-area: quote;
+            justify-self: right;
+            align-self: start;
+            padding-right: 17%;
+            padding-top: 23%;
+         }
+
+         .quote_title {
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+         }
+
+         .quote_image {
+            padding-top: 3%;
+         }
+
+         .work {
+            display: grid;
+            grid-area: work;
+            grid-template-areas: 'title3 title3 title3'
+                                 'sport hink record'
+                                 'felps bolt nick'
+                                 'empty1 vacant empty2';
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 0.5fr 1fr 1fr 1fr;
+            align-content: start;
+            justify-content: center;
+            background: white;
+            color: black;
+            background: black;
+            color: white;
+         }
+
+         .title3 {
+            grid-area: title3;
+            justify-self: center;
+            align-self: start;
+            padding-top: 2%;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 40px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+         }
+
+         .sport {
+            grid-area: sport;
+            display: grid;
+            grid-template-areas: 'sport_title'
+                                 'sport_image';
+            grid-template-rows: 30% 55%;
+            width:99%;
+            padding-top: 5%;
+            justify-self: center;
+            padding-left: 0%;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+            border: 4px solid white;
+         }
+
+         .sport_title {
+            grid-area: sport_title;
+            justify-self: center;
+            align-self: start;
+            text-align: center;
+         }
+
+         .sport_image {
+            grid-area: sport_image;
+            justify-self: center;
+            align-self: end;
+         }
+
+
+         .hink{
+            grid-area: hink;
+            display: grid;
+            grid-template-areas: 'hink_title'
+                                 'hink_image';
+            grid-template-rows: 30% 55%;
+            padding-top: 5%;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+            border: 4px solid white;
+         }
+
+         .hink_title {
+            grid-area: hink_title;
+            justify-self: center;
+            align-self: start;
+            text-align: center;
+         }
+
+         .hink_image {
+            grid-area: hink_image;
+            justify-self: center;
+            align-self: end;
+         }
+
+         .record {
+            grid-area: record;
+            display: grid;
+            grid-template-areas: 'record_title record_title'
+                                 'record_image record_image';
+            grid-template-rows: 30% 55%;
+            padding-top: 5%;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+            border: 4px solid white;
+         }
+
+         .record_title {
+            grid-area: record_title;
+            justify-self: center;
+            align-self: start;
+            text-align: center;
+         }
+
+         .record_image {
+            grid-area: record_image;
+            justify-self: center;
+            align-self: end;
+         }
+
+         .felps {
+            grid-area: felps;
+            display: grid;
+            grid-template-areas: 'felps_title'
+                                 'felps_image';
+            grid-template-rows: 30% 55%;
+            padding-top: 5%;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+            border: 4px solid white;
+         }
+
+         .felps_title {
+            grid-area: felps_title;
+            justify-self: center;
+            align-self: start;
+            text-align: center;
+         }
+
+         .felps_image {
+            grid-area: felps_image;
+            justify-self: center;
+            align-self: end;
+         }
+
+         .bolt {
+            grid-area: bolt;
+            display: grid;
+            grid-template-areas: 'bolt_title'
+                                 'bolt_image';
+            grid-template-rows: 30% 58%;
+            padding-top: 5%;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+            border: 4px solid white;
+         }
+
+         .bolt_title {
+            grid-area: bolt_title;
+            justify-self: center;
+            align-self: start;
+            text-align: center;
+         }
+
+         .bolt_image {
+            grid-area: bolt_image;
+            justify-self: center;
+            align-self: end;
+         }
+
+         .nick {
+            grid-area: nick;
+            display: grid;
+            grid-template-areas: 'nick_title'
+                                 'nick_image';
+            grid-template-rows: 30% 55%;
+            padding-top: 5%;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+            border: 4px solid white;
+         }
+
+         .nick_title {
+            grid-area: nick_title;
+            justify-self: center;
+            align-self: start;
+            text-align: center;
+         }
+
+         .nick_image {
+            grid-area: nick_image;
+            justify-self: center;
+            align-self: end;
+         }
+
+         .vacant {
+            grid-area: vacant;
+            display: grid;
+            grid-template-areas: 'vacant_title'
+                                 'vacant_image';
+            grid-template-rows: 30% 55%;
+            padding-top: 5%;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+            border: 8px solid white;
+         }
+
+         .vacant_title {
+            grid-area: vacant_title;
+            justify-self: center;
+            align-self: start;
+            text-align: center;
+         }
+
+         .vacant_image {
+            grid-area: vacant_image;
+            justify-self: center;
+            align-self: end;
+
+         }
+
+         .empty1 {
+            grid-area: empty;
+         }
+         .empty2 {
+            grid-area: empty;
+         }
+
+         .projects {
+            grid-area: projects;
+            display: grid;
+            grid-template-areas: 'title4 title4 title4'
+                                 'tesla amazon meta'
+                                 'tesla amazon meta'
+                                 'mers mers mers';
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 0.4fr 1fr 1fr 1fr;
+            background: white;
+            color: black;
+            
+         }
+
+         .title4 {
+            grid-area: title4;
+            justify-self: center;
+            align-self: center;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 40px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+         }
+
+         .tesla {
+            grid-area: tesla;
+            display: grid;
+            grid-template-areas: 'tesla_logo'
+                                 'tesla_img';
+            grid-template-rows: 30% 50%;
+            justify-self: left;
+            padding-left: 10%;
+         }
+
+         .tesla_logo {
+            grid-area: tesla_logo;
+            justify-self: center;
+            align-self: start;
+         }
+
+         .tesla_img {
+            grid-area: tesla_img;
+            padding-top: 15%;
+         }
+
+         .amazon {
+            grid-area:amazon;
+            grid-template-areas: 'amazon_logo'
+                                 'amazon_img';
+            grid-template-rows: 50% 50%;
+            padding-top: 19%;
+            justify-self: center;
+         }
+
+         .amazon_logo {
+            grid-area: amazon_logo;
+            justify-self: center;
+            align-self: start;
+         }
+
+         .amazon_img {
+            grid-area: amazon_img;
+            justify-self: center;
+            padding-left: 3%;
+            padding-top: 25%;
+         }
+
+
+         .meta {
+            grid-area:meta;
+            grid-template-areas: 'meta_logo'
+                                 'meta_img';
+            grid-template-rows: 50% 50%;
+            padding-right: 15%;
+            padding-top: 5%;
+            justify-self: right;
+         }
+
+         .meta_logo {
+            grid-area: meta_logo;
+            justify-self: right;
+            padding-left: 12%;
+            padding-top: 3%;
+         }
+
+         .meta_img {
+            grid-area: meta_img;
+            justify-self: center;
+            padding-top: 16%;
+         }
+
+         .mers {
+            grid-area: mers;
+            grid-template-areas: 'mers_text mers_text mers_text'
+                                 'mers_img mers_img mers_img';
+            grid-template-rows: 50% 50%;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-self: center;
+            align-self: start;
+            padding-bottom: 2%;
+         }
+
+         .mers_text {
+            grid-area: mers_text;
+            justify-self: center;
+            align-self: start;
+            padding-left: 10%;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 30px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+         }
+
+         .mers_img {
+            grid-area: mers_img;
+            padding-top: 4%;
+         }
+         .contacts {
+            display: grid;
+            grid-area: contacts;
+            grid-template-areas: 'title5 title5 title5'
+                                 'mail mail mail'
+                                 'tg tg tg'
+                                 'vk vk vk'
+                                 'tag tag tag';
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 0.4fr 1fr 1fr 1fr 0.4fr;
+            background: black;
+            color: white;
+           
+         }
+
+         .title5 {
+            grid-area: title5;
+            justify-self: center;
+            align-self: center;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 40px;
+            letter-spacing: 0.1em;
+            line-height: 2em;
+         }
+
+         .mail {
+            grid-area: mail;
+            display: grid;
+            grid-template-areas: 'mail_img  mail_text';
+            grid-template-columns: 0.7fr 1fr;
+            justify-self: center;
+            align-self: center;
+            padding-right: 5%;
+         }
+
+         .mail_img {
+            grid-area: mail_img;
+         }
+
+         .mail_text {
+            grid-area: mail_text;
+            align-self: start;
+            padding-top: 8%;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 20px;
+         }
+
+         .mail_text a {
+            text-decoration: none;
+            color: darkmagenta;
+         }
+
+         .tg {
+            grid-area: tg;
+            display: grid;
+            grid-template-areas: 'tg_img  tg_text';
+            grid-template-columns: 0.7fr 1fr;
+            justify-self: center;
+            align-self: start;
+            padding-top: 1%;
+         }
+
+         .tg_img {
+            grid-area: tg_img;
+         }
+
+         .tg_text {
+            grid-area: tg_text;
+            color: white;
+            align-self: start;
+            padding-top: 6%;
+            padding-left: 3%;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 20px;
+         }
+
+         .tg_text a {
+            text-decoration: none;
+            color: darkmagenta;
+         }
+
+         .vk {
+            grid-area: vk;
+            display: grid;
+            grid-template-areas: 'vk_img  vk_text';
+            grid-template-columns: 0.7fr 1fr;
+            justify-self: center;
+            align-self: start;
+            padding-left: 2.5vw;
+            padding-top: 1vh;
+        }
+
+        .vk_img {
+            grid-area: vk_img;
+            padding-left: 1vw;
+         }
+
+         .vk_text {
+            grid-area: vk_text;
+            align-self: start;
+            padding-top: 6%;
+            font-family: "Montserrat";
+            font-weight: bold;
+            font-size: 20px;
+            padding-right: 1vw;
+         }
+
+         .vk_text a {
+            text-decoration: none;
+            color: darkmagenta;
+         }
+
+        .tag {
+            grid-area: tag;
+            justify-self: center;
+            padding-left: 0.5vw;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+<div class = "container"> 
+<p> <a name="up"></a></p>
+   <div class="item header">
+    <div class = "name">
+        <p> <a href="https://www.twitch.tv/brat_moxnat" target="_blank">brat_moxnat</a> </p>
+    </div> 
+    <div class = "navbar">
+        <a href = "#aboutme">Обо мне</a>
+        <a href = "#work">Достижения</a>
+        <a href = "#projects">Проекты</a>
+        <a href = "#contacts">Контакты</a>
+    </div>
+
+   </div>
+   <div class="item legend">
+    <div class="text1">
+        <div class="item title">
+            Легенда отечественного киберспорта
+        </div>
+        <div class="item addtext">
+            <p> Полон идей, открыт для всего нового</p>
+            <p> Кайфую, но работаю</p>
+        </div>
+       <div class="item contactme">
+        <a href = "#contactme">На связи</a>
+        </div>
+    </div>
+        <div class="image">
+            <img src="images/image.png" height = 90%>   
+        </div>
+        <p> <a name="aboutme"></a></p>
+   </div>
+
+   <div class="item aboutme">
+    <div class="item title2"> 
+        Обо мне
+    </div>
+    <div class="item base">
+        <div class=intro> <p> База</p> </div>
+        <p> Я Лев a.k.a Левазавр, Левандер, Ламбаргини и т.д. и т.п. </p>
+        <p> Я бизнесмен, спортсмен, боксёр, бобёр, артист, авантюрист,</p>
+        <p> кекс, укроп, филантроп и просто хороший парень. </p>
+    </div>
+    <div class="item skills">
+        <div class=skills_title> <p> Умения и навыки</p></div>
+        <p> - Тройное сальто назад</p>
+        <p> - Работаю за двоих, ем за четверых, сплю за семерых</p>
+        <p> - Если ударят - не ударяюсь</p>
+        <p> - Подберу мем под любую ситуацию</p>
+        <p> - И ещё куча всего другого, можете маму спросить </p>
+    </div>
+    <div class="item hobbies">
+        <div class=hobbies_title> <p> Хобби</p></div>
+        <p> - хорсинг</p>
+        <p> - Волейбол, гандбол, баскетбол, футбол, бейсбол, пионербол,</p>
+        <p> пейнтбол, страйкбол и балабол я в общем</p>
+        <p> - Киберспорт (VALORANT, CS2, Dota 2, Весёлая ферма 2)</p>
+    </div>
+    <div class="item quote">
+        <div class=quote_title> <p> Любимая цитата</p></div>
+        <div class=quote_image> <img src="images/stet.jpg" height = 300px> </div>
+        <p> <a name="work"></a></p>
+        </div>
+    </div>
+    
+
+   <div class="item work">
+    <div class="title3" > 
+        Достижения 
+    </div>
+    <div class="sport"> 
+        <div class=sport_title> 
+            <p> Чемпион мира по всем видам спорта, </p>
+            <p> по всем дисциплинам и номинациям </p>
+        </div>
+        <div class="sport_image">
+            <img src="images/кубок.png" height = 200px>   
+        </div>
+    </div>
+    <div class="hink"> 
+        <div class=hink_title> 
+        <p> Неоднократный победитель соревнований </p>
+        <p> по поеданию хинкалей </p>
+        </div>
+        <div class="hink_image">
+            <img src="images/хинкали.png" height = 200px>   
+        </div>
+    </div>
+    <div class="record"> 
+        <div class=record_title> 
+        <p> Рекордсмен книги рекордов Самары </p>
+        <p>  (700 литров кваса залпом за минуту)  </p>
+        </div>
+        <div class="record_image">
+            <img src="images/квас.png" height = 200px>   
+        </div>
+    </div>
+    <div class="felps"> 
+        <div class=felps_title> 
+        <p> Обогнал Майкла Фелпса в заплыве </p>
+        <p> на 200 килограмм жиром  </p>
+        </div>
+        <div class="felps_image">
+            <img src="images/толстяк.png" height = 200px>   
+        </div>
+    </div>
+    <div class="bolt"> 
+        <div class=bolt_title> 
+        <p> Опередил Усейна Болта в беге </p>
+        <p> до магаза за пивом  </p>
+        </div>
+        <div class="bolt_image">
+            <img src="images/пиво.png" height = 200px>   
+        </div>
+    </div>
+    <div class="nick"> 
+        <div class=nick_title> 
+        <p> Обыграл Ника Вучича в шашки</p>
+        </div>
+        <div class="nick_image">
+            <img src="images/шашки.png" height = 200px>   
+        </div>
+    </div>
+    <div class="vacant"> 
+        <div class=vacant_title> 
+        <p> Coming soon... </p>
+        </div>
+        <div class="vacant_image">
+            <img src="images/вопрос.png" height = 200px>  
+            <p> <a name="projects"></a></p> 
+        </div>
+    </div>
+    <div class="empty1"> 
+        <p> </p>
+    </div>
+    <div class="empty2"> 
+        <p> </p>
+    </div>
+    </div>
+
+
+   <div class="item projects">
+    <div class="title4">
+        Проекты 
+    </div>
+    <div class="tesla"> 
+        <div class="tesla_logo">
+            <img src="images/tesla.png" height = 250px> 
+         </div>
+        <div class="tesla_img"> 
+            <img src="images/ilon1.png" height = 400px> 
+        </div>
+    </div>
+    <div class="amazon"> 
+        <div class="amazon_logo">
+            <img src="images/amazon.png" height = 100px> 
+        </div>
+        <div class="amazon_img">
+            <img src="images/bezos1.png" height = 400px> 
+        </div>
+    </div>
+    <div class="meta"> 
+        <div class="meta_logo">
+            <img src="images/meta.png" height = 180px> 
+        </div>
+        <div class="meta_img"> 
+            <img src="images/mark.jpg" height = 400px>
+        </div>
+    </div>
+    <div class="mers"> 
+        <div class="mers_text"> 
+            <p> И ещё мерс у меня есть</p>
+        </div>
+        <div class="mers_img"> 
+            <img src="images/mers.jpg" height = 400px> 
+        </div>
+        
+    </div>
+    </div>
+
+   <div class="item contacts">
+    <p> <a name="contacts"></a></p>
+    <p> <a name="contactme"></a></p>
+        <div class="title5"> 
+            На связи
+        </div>
+        <div class="mail"> 
+            <div class="mail_img"> 
+                <img src="images/mail.png" height = 50px> 
+            </div>
+            <div class="mail_text"> 
+                <p><a href="mailto:li-vai@mail.ru" target="_blank">li-vai@mail.ru</a> </p>
+            </div>
+        </div>
+        <div class="tg"> 
+            <div class="tg_img"> 
+                <img src="images/tg.png" height = 50px> 
+            </div>
+            <div class="tg_text"> 
+                <p> <a href="https://t.me/Ax1ser" target="_blank">https://t.me/Ax1ser</a> </p>
+            </div>
+        </div>
+        <div class="vk"> 
+            <div class="vk_img"> 
+                <img src="images/vk.png" height = 50px> 
+            </div>
+            <div class="vk_text"> 
+                <p> <a href="https://vk.com/ax1ser" target="_blank">https://vk.com/ax1ser</a> </p>
+            </div>
+        </div>
+        <div class="tag"> 
+            <p> © 2023 Coded with 💜 by brat_moxnat</p>
+        </div>
+    </div>
+    <div class = "up">
+        <a href = "#up">Наверх</a>
+    </div>
+</div>
+
+</body>
+
+
+
+</html>
